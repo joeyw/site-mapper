@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+dir=`pwd`
+
+echo "===> Bundling..."
+script/bootstrap --quiet
+
+echo "===> Launching..."
+SITE_MAPPER_VERBOSE=true bundle exec irb -Ilib -rsite_mapper
